@@ -1,0 +1,11 @@
+﻿@model DepositReportRequestDto
+
+<div class="container">
+    <h1 class="text-center">Deposit Report</h1>
+    <form asp-controller="DepositReport" asp-action="GenerateReport" method="post">
+        <vc:text-input id="@Html.IdFor(x => x.OrganizationName)"
+                       label="@Html.DisplayNameFor(x => x.OrganizationName)"
+                       value="@Html.ValueFor(x => x.OrganizationName)"
+                       length="@int.MaxValue"></vc:text-input>
+    </form>
+</div>

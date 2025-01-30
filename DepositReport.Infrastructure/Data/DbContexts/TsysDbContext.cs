@@ -1,6 +1,8 @@
-﻿using DepositReport.Domain.Entities;
+﻿#region usings
+using DepositReport.Domain.Entities;
 using DepositReport.Infrastructure.Data.ModelConfigurations;
-using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore; 
+#endregion
 
 namespace DepositReport.Infrastructure.Data.DbContexts
 {

@@ -1,6 +1,6 @@
 ﻿namespace DepositReport.Domain.Entities
 {
-    public class ReportACHSettledTransactionsTemp
+    public class ReportAchSettledTransactionsTemp
     {
         public string ABA { get; set; }
         public string AccountNumberMasked { get; set; }

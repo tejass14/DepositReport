@@ -1,8 +1,11 @@
-﻿namespace DepositReport.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DepositReport.Domain.Entities
 {
     public class DepositTransactionTypes
     {
-        public int DepositTransactionTypeID { get; set; }
+        [Key]
+        public byte DepositTransactionTypeID { get; set; }
         public string DepositTransactionTypeName { get; set; }
 
         public ICollection<DepositTransactions> DepositTransactions { get; set; }

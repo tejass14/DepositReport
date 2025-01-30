@@ -5,7 +5,7 @@
         public string ABA { get; set; }
         public string AccountNumberMasked { get; set; }
         public string AccountReferenceCode { get; set; }
-        public int? ACHProcessorExportFileID { get; set; }
+        public long? ACHProcessorExportFileID { get; set; }
         public string ACHProcessorExportFileName { get; set; }
         public string ACHProcessorExportFileStatusName { get; set; }
         public string CaptureSourceTypeName { get; set; }
@@ -21,7 +21,7 @@
         public string PayeeCode { get; set; }
         public string PayeeName { get; set; }
         public DateTime? SettlementDate { get; set; }
-        public int? SettlementTypeID { get; set; }
+        public byte? SettlementTypeID { get; set; }
         public decimal? Amount { get; set; }
         public string TraceNumber { get; set; }
         public int? TransactionCancelledTypeID { get; set; }
@@ -32,7 +32,7 @@
         public string UserDefinedFieldOne { get; set; }
         public string UserDefinedFieldTwo { get; set; }
         public string UserFullName { get; set; }
-        public int? ValidationBatchID { get; set; }
+        public long? ValidationBatchID { get; set; }
         public string ValidationBatchName { get; set; }
         public string EbopTransactionStatus { get; set; }
         public string SessionID { get; set; }

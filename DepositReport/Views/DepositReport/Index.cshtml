@@ -3,9 +3,8 @@
 <div class="container">
     <h1 class="text-center">Deposit Report</h1>
     <form asp-controller="DepositReport" asp-action="GenerateReport" method="post">
-        <vc:text-input id="@Html.IdFor(x => x.OrganizationName)"
-                       label="@Html.DisplayNameFor(x => x.OrganizationName)"
-                       value="@Html.ValueFor(x => x.OrganizationName)"
-                       length="@int.MaxValue"></vc:text-input>
+        <vc:text-input id="@Html.IdFor(x => x.OrganizationName)" label="@Html.DisplayNameFor(x => x.OrganizationName)" value="@Html.ValueFor(x => x.OrganizationName)" length="@int.MaxValue"></vc:text-input>
+        <vc:text-input id="@Html.IdFor(x => x.MCID)" label="@Html.DisplayNameFor(x => x.MCID)" value="@Html.ValueFor(x => x.MCID)" length="@int.MaxValue"></vc:text-input>
+        <vc:text-input id="@Html.IdFor(x => x.OrganizationID)" label="@Html.DisplayNameFor(x => x.OrganizationID)" value="@Html.ValueFor(x => x.OrganizationID)" length="@int.MaxValue"></vc:text-input>
     </form>
 </div>

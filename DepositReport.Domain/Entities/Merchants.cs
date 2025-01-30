@@ -17,6 +17,6 @@
         public string Category { get; set; }
         public string DataSource { get; set; }
         public DateTime? LastDepositDate { get; set; }
-        public bool? Reportable { get; set; }
+        public int? Reportable { get; set; }
     }
 }

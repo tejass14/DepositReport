@@ -2,11 +2,11 @@
 {
     public class Files
     {
-        public int FileID { get; set; } 
-        public int FileTypeID { get; set; }
+        public long FileID { get; set; } 
+        public byte FileTypeID { get; set; }
         public string FileName { get; set; }
         public string FullFileNameAndPath { get; set; }
-        public int RunID { get; set; }
+        public Guid RunID { get; set; }
         public DateTime DateAdded { get; set; }
         public int TotalReadLines { get; set; }
         public virtual FileTypes FileTypes { get; set; }

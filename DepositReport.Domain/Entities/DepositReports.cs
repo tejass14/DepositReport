@@ -1,11 +1,14 @@
-﻿namespace DepositReport.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DepositReport.Domain.Entities
 {
     public class DepositReports
     {
+        [Key]
         public int DepositReportID { get; set; }
-        public int DepositReportStatusTypeID { get; set; }
+        public byte DepositReportStatusTypeID { get; set; }
         public string DepositReportName { get; set; }
-        public int MCID { get; set; }
+        public string MCID { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? ProcessedDate { get; set; }
         public string? ReportXml { get; set; }

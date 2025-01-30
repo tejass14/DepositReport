@@ -1,7 +1,9 @@
-﻿namespace DepositReport.Core.Services
+﻿using DepositReport.Domain.Entities;
+
+namespace DepositReport.Core.Services
 {
     public interface IDepositReportService
     {
-        public void GenerateReport();
+        Task<IEnumerable<Merchants>> GetReportableMerchantsAsync();
     }
 }

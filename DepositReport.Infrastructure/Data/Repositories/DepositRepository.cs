@@ -19,5 +19,14 @@ namespace DepositReport.Infrastructure.Data.Repositories
             var depositReports = _depositReportDbContext.DepositReports.FromSqlRaw("SELECT * FROM DepositReport WHERE CAST(DepositDate AS DATE) = @p0", date).AsNoTracking().ToList();
             return depositReports;
         }
+
+        public async Task<IEnumerable<Merchants>> GetReportableMerchantsAsync()
+        {
+            return await _depositReportDbContext.Merchants
+                .Where(m => m.Reportable == 1)
+                .Take(10)
+                .ToListAsync();
+
+        }
     }
 }

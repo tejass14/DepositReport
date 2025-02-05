@@ -8,13 +8,15 @@
         public int DepositReportID { get; set; }
         public int CCMIDs { get; set; }
         public string ReportXml { get; set; }
-        public DateTime ReportDate { get; set; }
-        public DateTime TSYSDate { get; set; }
+        public DateTime? ReportDate { get; set; }
+        public DateTime ?TSYSDate { get; set; }
         public string ACHMIDs { get; set; }
         public string XmlName { get; set; }
         public string CCSummary { get; set; }
         public string ACHSummary { get; set; }
-        //c_DepositReport
-        //xlsxReport
+        public string c_DepositReport { get; set; }
+        // public string iFile { get; set; } 
+        public string Reportxml { get; set; } 
+        public int xlsxReport { get; set; }
     }
 }

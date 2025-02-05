@@ -2,9 +2,71 @@
 
 <div class="container">
     <h1 class="text-center">Deposit Report</h1>
+
     <form asp-controller="DepositReport" asp-action="GenerateReport" method="post">
-        <vc:text-input id="@Html.IdFor(x => x.OrganizationName)" label="@Html.DisplayNameFor(x => x.OrganizationName)" value="@Html.ValueFor(x => x.OrganizationName)" length="@int.MaxValue"></vc:text-input>
-        <vc:text-input id="@Html.IdFor(x => x.MCID)" label="@Html.DisplayNameFor(x => x.MCID)" value="@Html.ValueFor(x => x.MCID)" length="@int.MaxValue"></vc:text-input>
-        <vc:text-input id="@Html.IdFor(x => x.OrganizationID)" label="@Html.DisplayNameFor(x => x.OrganizationID)" value="@Html.ValueFor(x => x.OrganizationID)" length="@int.MaxValue"></vc:text-input>
+        <div class="form-group">
+            <vc:text-input id="@Html.IdFor(x => x.OrganizationName)" label="Organization Name" value="@Html.ValueFor(x => x.OrganizationName)" length="@int.MaxValue"></vc:text-input>
+            <vc:text-input id="@Html.IdFor(x => x.MCID)" label="MCID" value="@Html.ValueFor(x => x.MCID)" length="@int.MaxValue"></vc:text-input>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <vc:text-input id="@Html.IdFor(x => x.OrganizationID)" label="Organization ID" value="@Html.ValueFor(x => x.OrganizationID)" length="@int.MaxValue"></vc:text-input>
+            </div>
+            <div class="col-md-3">
+                <vc:text-input id="@Html.IdFor(x => x.DepositReportID)" label="Deposit Report ID" value="@Html.ValueFor(x => x.DepositReportID)" length="@int.MaxValue"></vc:text-input>
+            </div>
+            <div class="col-md-3">
+                <vc:date-input id="@Html.IdFor(x => x.ReportDate)" label="Report Date" value="@Html.ValueFor(x => x.ReportDate)"></vc:date-input>
+            </div>
+            <div class="col-md-3">
+                <vc:date-input id="@Html.IdFor(x => x.TSYSDate)" label="TSYS Date" value="@Html.ValueFor(x => x.TSYSDate)"></vc:date-input>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <vc:text-input id="@Html.IdFor(x => x.CCMIDs)" label="CCMIDs" value="@Html.ValueFor(x => x.CCMIDs)" length="@int.MaxValue"></vc:text-input>
+            </div>
+            <div class="col-md-6">
+                <vc:text-input id="@Html.IdFor(x => x.ACHMIDs)" label="ACHMIDs" value="@Html.ValueFor(x => x.ACHMIDs)" length="@int.MaxValue"></vc:text-input>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <vc:text-input id="@Html.IdFor(x => x.xlsxReport)" label="xlsxReport" value="@Html.ValueFor(x => x.xlsxReport)" length="@int.MaxValue"></vc:text-input>
+            </div>
+            <div class="col-md-6">
+                <vc:text-input id="@Html.IdFor(x => x.c_DepositReport)" label="c_DepositReport" value="@Html.ValueFor(x => x.c_DepositReport)" length="@int.MaxValue"></vc:text-input>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <vc:text-input id="@Html.IdFor(x => x.XmlName)" label="XML Name" value="@Html.ValueFor(x => x.XmlName)" length="@int.MaxValue"></vc:text-input>
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <label>CC Summary</label>
+                <textarea id="@Html.IdFor(x => x.CCSummary)" name="@Html.NameFor(x => x.CCSummary)" class="form-control" rows="5">@Html.ValueFor(x => x.CCSummary)</textarea>
+            </div>
+            <div class="col-md-6">
+                <label>ACH Summary</label>
+                <textarea id="@Html.IdFor(x => x.ACHSummary)" name="@Html.NameFor(x => x.ACHSummary)" class="form-control" rows="5">@Html.ValueFor(x => x.ACHSummary)</textarea>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <label>Report xml</label>
+                <textarea id="@Html.IdFor(x => x.Reportxml)" name="@Html.NameFor(x => x.ReportXml)" class="form-control" rows="5">@Html.ValueFor(x => x.ReportXml)</textarea>
+            </div>
+        </div>
+        <div class="form-group text-center mt-3">
+            <button type="submit" class="btn btn-primary">Generate Report</button>
+        </div>
     </form>
 </div>

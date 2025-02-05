@@ -15,4 +15,8 @@
     <ProjectReference Include="..\DepositReport.Infrastructure\DepositReport.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Shared\Components\NumberInput\" />
+  </ItemGroup>
+
 </Project>

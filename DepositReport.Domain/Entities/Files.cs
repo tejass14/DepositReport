@@ -12,5 +12,6 @@
         public virtual FileTypes FileTypes { get; set; }
         public virtual ICollection<ACHD> Achds { get; set; }   
         public virtual ICollection<ACHT> Achts { get; set; }
+        public virtual ICollection<Ca> Ca { get; set; }
     }
 }

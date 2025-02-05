@@ -4,7 +4,10 @@ namespace DepositReport.Infrastructure.Data.Repositories
 {
     public interface IDepositRepository
     {
-        public IEnumerable<DepositReports> GetDepositReports(DateTime date);
+        IEnumerable<DepositReports> GetDepositReports(DateTime date);
         Task<IEnumerable<Merchants>> GetReportableMerchantsAsync();
+        IEnumerable<Deposits> GetReportDepositsCc();
+        IEnumerable<Deposits> GetReportDepositsAch();
+
     }
 }

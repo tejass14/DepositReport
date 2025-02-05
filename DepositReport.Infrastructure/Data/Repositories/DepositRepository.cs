@@ -28,5 +28,15 @@ namespace DepositReport.Infrastructure.Data.Repositories
                 .ToListAsync();
 
         }
+
+        public IEnumerable<Deposits> GetReportDepositsCc()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Deposits> GetReportDepositsAch()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

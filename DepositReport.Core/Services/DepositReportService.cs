@@ -1,5 +1,4 @@
 ﻿using DepositReport.Domain.Entities;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using DepositReport.Infrastructure.Data.Repositories;
 namespace DepositReport.Core.Services
 {
@@ -15,6 +14,15 @@ namespace DepositReport.Core.Services
         public async Task<IEnumerable<Merchants>> GetReportableMerchantsAsync()
         {
             return await _depositRepository.GetReportableMerchantsAsync();
+        }
+
+        public void GenerateXml(DateTime date)
+        {
+            var depositReports = _depositRepository.GetDepositReports(date);
+            foreach (var depositReport in depositReports)
+            {
+                
+            }
         }
     }
 }

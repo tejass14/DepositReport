@@ -11,12 +11,12 @@ namespace DepositReport.Infrastructure.Data.ModelConfigurations
         public void Configure(EntityTypeBuilder<FileTypes> builder)
         {
             builder.ToTable("FileTypes");
-            builder.HasKey(ft => ft.FileTypeID);
+            builder.HasKey(ft => ft.FileTypeId);
 
             // Relationships
             builder.HasMany(ft => ft.Files)
                 .WithOne(f => f.FileTypes)
-                .HasForeignKey(f => f.FileTypeID)
+                .HasForeignKey(f => f.FileTypeId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

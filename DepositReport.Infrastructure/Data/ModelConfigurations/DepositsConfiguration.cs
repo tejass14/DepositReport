@@ -13,11 +13,11 @@ namespace DepositReport.Infrastructure.Data.ModelConfigurations
 
             builder.ToTable("Deposits");
 
-            builder.HasKey(d => d.DepositID);
+            builder.HasKey(d => d.DepositId);
 
             builder.HasMany(d => d.DepositTransactions)
                 .WithOne(dt => dt.Deposit)
-                .HasForeignKey(dt => dt.DepositID)
+                .HasForeignKey(dt => dt.DepositId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

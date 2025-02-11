@@ -14,8 +14,8 @@ namespace DepositReport.Infrastructure.Data.DbContexts
         }
         public virtual DbSet<FileTypes> FileTypes { get; set; }
         public virtual DbSet<Files> Files { get; set; }
-        public virtual DbSet<ACHD> AchDs { get; set; }
-        public virtual DbSet<ACHT> AchTs { get; set; }
+        public virtual DbSet<Achd> AchDs { get; set; }
+        public virtual DbSet<Acht> AchTs { get; set; }
         public virtual DbSet<Ca> Ca { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

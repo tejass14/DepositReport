@@ -11,34 +11,34 @@
 
         <div class="row">
             <div class="col-md-3">
-                <vc:text-input id="@Html.IdFor(x => x.OrganizationID)" label="Organization ID" value="@Html.ValueFor(x => x.OrganizationID)" length="@int.MaxValue"></vc:text-input>
+                <vc:text-input id="@Html.IdFor(x => x.OrganizationId)" label="Organization ID" value="@Html.ValueFor(x => x.OrganizationId)" length="@int.MaxValue"></vc:text-input>
             </div>
             <div class="col-md-3">
-                <vc:text-input id="@Html.IdFor(x => x.DepositReportID)" label="Deposit Report ID" value="@Html.ValueFor(x => x.DepositReportID)" length="@int.MaxValue"></vc:text-input>
+                <vc:text-input id="@Html.IdFor(x => x.DepositReportId)" label="Deposit Report ID" value="@Html.ValueFor(x => x.DepositReportId)" length="@int.MaxValue"></vc:text-input>
             </div>
             <div class="col-md-3">
                 <vc:date-input id="@Html.IdFor(x => x.ReportDate)" label="Report Date" value="@Html.ValueFor(x => x.ReportDate)"></vc:date-input>
             </div>
             <div class="col-md-3">
-                <vc:date-input id="@Html.IdFor(x => x.TSYSDate)" label="TSYS Date" value="@Html.ValueFor(x => x.TSYSDate)"></vc:date-input>
+                <vc:date-input id="@Html.IdFor(x => x.TsysDate)" label="TSYS Date" value="@Html.ValueFor(x => x.TsysDate)"></vc:date-input>
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-6">
-                <vc:text-input id="@Html.IdFor(x => x.CCMIDs)" label="CCMIDs" value="@Html.ValueFor(x => x.CCMIDs)" length="@int.MaxValue"></vc:text-input>
+                <vc:text-input id="@Html.IdFor(x => x.CcmiDs)" label="CCMIDs" value="@Html.ValueFor(x => x.CcmiDs)" length="@int.MaxValue"></vc:text-input>
             </div>
             <div class="col-md-6">
-                <vc:text-input id="@Html.IdFor(x => x.ACHMIDs)" label="ACHMIDs" value="@Html.ValueFor(x => x.ACHMIDs)" length="@int.MaxValue"></vc:text-input>
+                <vc:text-input id="@Html.IdFor(x => x.AchmiDs)" label="ACHMIDs" value="@Html.ValueFor(x => x.AchmiDs)" length="@int.MaxValue"></vc:text-input>
             </div>
         </div>
         
         <div class="row">
             <div class="col-md-6">
-                <vc:text-input id="@Html.IdFor(x => x.xlsxReport)" label="xlsxReport" value="@Html.ValueFor(x => x.xlsxReport)" length="@int.MaxValue"></vc:text-input>
+                <vc:text-input id="@Html.IdFor(x => x.XlsxReport)" label="xlsxReport" value="@Html.ValueFor(x => x.XlsxReport)" length="@int.MaxValue"></vc:text-input>
             </div>
             <div class="col-md-6">
-                <vc:text-input id="@Html.IdFor(x => x.c_DepositReport)" label="c_DepositReport" value="@Html.ValueFor(x => x.c_DepositReport)" length="@int.MaxValue"></vc:text-input>
+                <vc:text-input id="@Html.IdFor(x => x.CDepositReport)" label="c_DepositReport" value="@Html.ValueFor(x => x.CDepositReport)" length="@int.MaxValue"></vc:text-input>
             </div>
         </div>
 
@@ -52,11 +52,11 @@
         <div class="row">
             <div class="col-md-6">
                 <label>CC Summary</label>
-                <textarea id="@Html.IdFor(x => x.CCSummary)" name="@Html.NameFor(x => x.CCSummary)" class="form-control" rows="5">@Html.ValueFor(x => x.CCSummary)</textarea>
+                <textarea id="@Html.IdFor(x => x.CcSummary)" name="@Html.NameFor(x => x.CcSummary)" class="form-control" rows="5">@Html.ValueFor(x => x.CcSummary)</textarea>
             </div>
             <div class="col-md-6">
                 <label>ACH Summary</label>
-                <textarea id="@Html.IdFor(x => x.ACHSummary)" name="@Html.NameFor(x => x.ACHSummary)" class="form-control" rows="5">@Html.ValueFor(x => x.ACHSummary)</textarea>
+                <textarea id="@Html.IdFor(x => x.AchSummary)" name="@Html.NameFor(x => x.AchSummary)" class="form-control" rows="5">@Html.ValueFor(x => x.AchSummary)</textarea>
             </div>
         </div>
         <div class="row">

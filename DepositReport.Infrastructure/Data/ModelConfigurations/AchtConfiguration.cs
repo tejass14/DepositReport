@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DepositReport.Infrastructure.Data.ModelConfigurations
 {
-    public class AchtConfiguration : IEntityTypeConfiguration<ACHT>
+    public class AchtConfiguration : IEntityTypeConfiguration<Acht>
     {
-        public void Configure(EntityTypeBuilder<ACHT> builder)
+        public void Configure(EntityTypeBuilder<Acht> builder)
         {
             builder.ToTable("ACHT");
 
@@ -16,7 +16,7 @@ namespace DepositReport.Infrastructure.Data.ModelConfigurations
 
             builder.HasOne(acht => acht.Files)
                 .WithMany(f => f.Achts)
-                .HasForeignKey(acht => acht.FileID)
+                .HasForeignKey(acht => acht.FileId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

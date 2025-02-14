@@ -12,16 +12,16 @@ namespace DepositReport.Infrastructure.Data.ModelConfigurations
         {
             builder.ToTable("DepositTransactions");
 
-            builder.HasKey(dt => dt.DepositTransactionID);
+            builder.HasKey(dt => dt.DepositTransactionId);
 
             builder.HasOne(dt => dt.Deposit)
                 .WithMany(d => d.DepositTransactions)
-                .HasForeignKey(dt => dt.DepositID)
+                .HasForeignKey(dt => dt.DepositId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(dt => dt.DepositTransactionType)
                 .WithMany(dtt => dtt.DepositTransactions)
-                .HasForeignKey(dt => dt.DepositTransactionTypeID)
+                .HasForeignKey(dt => dt.DepositTransactionTypeId)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

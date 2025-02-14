@@ -2,8 +2,8 @@
 {
     public class NumberInputModel
     {
-        public string Id { get; set; }
-        public string Label { get; set; }
+        public string? Id { get; set; }
+        public string? Label { get; set; }
         public int Value { get; set; }
     }
 }

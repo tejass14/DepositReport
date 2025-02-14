@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace DepositReport.Infrastructure.Data.ModelConfigurations
 {
-    public class AchdConfiguration : IEntityTypeConfiguration<ACHD>
+    public class AchdConfiguration : IEntityTypeConfiguration<Achd>
     {
-        public void Configure(EntityTypeBuilder<ACHD> builder)
+        public void Configure(EntityTypeBuilder<Achd> builder)
         {
             builder.ToTable("ACHD");
 
@@ -14,7 +14,7 @@ namespace DepositReport.Infrastructure.Data.ModelConfigurations
 
             builder.HasOne(achd => achd.Files)
                 .WithMany(f => f.Achds)
-                .HasForeignKey(achd => achd.FileID)
+                .HasForeignKey(achd => achd.FileId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

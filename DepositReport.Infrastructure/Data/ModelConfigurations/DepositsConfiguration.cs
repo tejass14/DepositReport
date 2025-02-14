@@ -17,7 +17,7 @@ namespace DepositReport.Infrastructure.Data.ModelConfigurations
 
             builder.HasMany(d => d.DepositTransactions)
                 .WithOne(dt => dt.Deposit)
-                .HasForeignKey(dt => dt.DepositID)
+                .HasForeignKey(dt => dt.DepositId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

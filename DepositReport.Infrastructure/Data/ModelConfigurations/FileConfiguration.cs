@@ -11,22 +11,22 @@ namespace DepositReport.Infrastructure.Data.ModelConfigurations
         public void Configure(EntityTypeBuilder<Files> builder)
         {
             builder.ToTable("Files");
-            builder.HasKey(f => f.FileID);
+            builder.HasKey(f => f.FileId);
 
             // Relationships
             builder.HasOne(f => f.FileTypes)
                 .WithMany(ft => ft.Files)
-                .HasForeignKey(f => f.FileTypeID)
+                .HasForeignKey(f => f.FileTypeId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasMany(f => f.Achds)
                 .WithOne()
-                .HasForeignKey(a => a.FileID)
+                .HasForeignKey(a => a.FileId)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasMany(f => f.Achts)
                 .WithOne()
-                .HasForeignKey(a => a.FileID)
+                .HasForeignKey(a => a.FileId)
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

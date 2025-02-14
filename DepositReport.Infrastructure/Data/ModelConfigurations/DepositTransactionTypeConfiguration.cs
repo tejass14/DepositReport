@@ -12,7 +12,7 @@ namespace DepositReport.Infrastructure.Data.ModelConfigurations
         {
             builder.ToTable("DepositTransactionTypes");
 
-            builder.HasKey(dtt => dtt.DepositTransactionTypeID);
+            builder.HasKey(dtt => dtt.DepositTransactionTypeId);
         }
     }
 }

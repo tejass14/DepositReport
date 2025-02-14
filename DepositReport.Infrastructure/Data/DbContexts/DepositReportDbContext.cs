@@ -19,19 +19,16 @@ namespace DepositReport.Infrastructure.Data.DbContexts
         public virtual DbSet<DepositTransactionTypes> DepositTransactionTypes { get; set; }
         public virtual DbSet<Merchants> Merchants { get; set; }
         public virtual DbSet<ReportAchSettledTransactionsTemp> ReportAchSettledTransactionsTemp { get; set; }
-        //public virtual DbSet<ChargeBacks> ChargeBacks { get; set; }
-        //public virtual DbSet<ReportDepositsAch> ReportDepositsAch { get; set; }
-        //public virtual DbSet<ReportDepositsCc> ReportDepositsCc { get; set; }
-        //public virtual DbSet<ReportMerchants> ReportMerchants { get; set; }
-        //public virtual DbSet<ReportTxNsAch> ReportTxNsAch { get; set; }
-        //public virtual DbSet<ReportTxNsCc> ReportTxNsCc { get; set; }
-        //public virtual DbSet<Reversals> Reversals { get; set; }
+        public virtual DbSet<ReportTransactionsTemp> ReportTransactionsTemp { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new DepositsConfiguration());
             modelBuilder.ApplyConfiguration(new DepositTransactionConfiguration());
             modelBuilder.ApplyConfiguration(new DepositTransactionTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ReportAchSettledTransactionsTempConfiguration());
+            modelBuilder.ApplyConfiguration(new ReportTransactionsTempConfigurations());
+            modelBuilder.ApplyConfiguration(new MerchantsConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

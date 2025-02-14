@@ -1,0 +1,8 @@
+﻿namespace DepositReport.Core.Services.Contracts
+{
+    public interface IDepositsService
+    {
+        void PopulateCcSqlTransactions(string date);
+        void PopulateAchSqlTransactions(string date);
+    }
+}

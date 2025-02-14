@@ -1,10 +1,9 @@
 ﻿using DepositReport.Domain.Entities;
 
-namespace DepositReport.Core.Services
+namespace DepositReport.Core.Services.Contracts
 {
     public interface IDepositReportService
     {
-        Task<IEnumerable<Merchants>> GetReportableMerchantsAsync();
         void GenerateXml(DateTime date);
     }
 }

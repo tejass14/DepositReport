@@ -1,27 +1,25 @@
-﻿using DepositReport.Domain.Entities;
-using DepositReport.Infrastructure.Data.Repositories;
+﻿#region usings
+using DepositReport.Core.Services.Contracts;
+using DepositReport.Infrastructure.Data.Repositories.Contracts; 
+#endregion
+
 namespace DepositReport.Core.Services
 {
-    public class DepositReportService: IDepositReportService
+    public class DepositReportService : IDepositReportService
     {
-        private readonly IDepositRepository _depositRepository;
+        private readonly IDepositReportsRepository _depositReportRepository;
 
-        public DepositReportService(IDepositRepository depositRepository)
+        public DepositReportService(IDepositReportsRepository depositReportRepository)
         {
-            _depositRepository = depositRepository;
-        }
-
-        public async Task<IEnumerable<Merchants>> GetReportableMerchantsAsync()
-        {
-            return await _depositRepository.GetReportableMerchantsAsync();
+            _depositReportRepository = depositReportRepository;
         }
 
         public void GenerateXml(DateTime date)
         {
-            var depositReports = _depositRepository.GetDepositReports(date);
+            var depositReports = _depositReportRepository.GetDepositReports(date);
             foreach (var depositReport in depositReports)
             {
-                
+
             }
         }
     }

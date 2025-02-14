@@ -1,16 +1,16 @@
 #region usings
+
+using DepositReport.Core.DependencyInjection;
 using DepositReport.Infrastructure.Data.DbContexts;
-using Microsoft.EntityFrameworkCore; 
+using DepositReport.Infrastructure.Data.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
 #endregion
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<DepositReportDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DepositReport")));
-
-builder.Services.AddDbContext<TsysDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("TSYS")));
+builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Services.AddCoreServices();
 
 builder.Services.AddControllersWithViews();
 

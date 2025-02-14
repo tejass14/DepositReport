@@ -19,6 +19,9 @@ namespace DepositReport.Infrastructure.Data.DependencyInjection
             services.AddDbContext<TsysDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("TSYS")));
 
+            services.AddDbContext<TsysDbContext>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("MerchantActivity")));
+
             services.AddScoped<IDepositReportsRepository, DepositRepostsRepository>();
             services.AddScoped<IReportTransactionsTempRepository, ReportTransactionsTempRepository>();
             services.AddScoped<IReportAchSettledTransactionsTempRepository, ReportAchSettledTransactionsTempRepository>();

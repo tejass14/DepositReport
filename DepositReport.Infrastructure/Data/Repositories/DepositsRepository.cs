@@ -11,10 +11,13 @@ namespace DepositReport.Infrastructure.Data.Repositories
     public class DepositsRepository : IDepositsRepository
     {
         private readonly DepositReportDbContext _depositReportDbContext;
+        private readonly TsysDbContext _tsysDbContext;
 
-        public DepositsRepository(DepositReportDbContext depositReportDbContext)
+
+        public DepositsRepository(DepositReportDbContext depositReportDbContext, TsysDbContext tsysDbContext)
         {
             _depositReportDbContext = depositReportDbContext;
+            _tsysDbContext = tsysDbContext;
         }
 
         public IEnumerable<Deposits> GetReportDepositsCc(string date)
@@ -40,6 +43,12 @@ namespace DepositReport.Infrastructure.Data.Repositories
         public IEnumerable<ReportAchSettledTransactionsTemp> GetDuplicateAchRecords(string transactionReferenceNumber)
         {
             return _depositReportDbContext.ReportAchSettledTransactionsTemp.FromSqlRaw("SELECT * FROM ReportTransactionsTemp WHERE TransactionReferenceNumber = @p0", transactionReferenceNumber).AsNoTracking().ToList();
+        }
+        public async Task<IEnumerable<Files>> GetTsysDepositsAsync(DateTime date)
+        {
+            return await _tsysDbContext.Files
+                .FromSqlRaw("SELECT ProcessorMID, DepositDate, UniqueIdentifier, DepositAmount, DepositDescription, SettlementRoutingNo, SettlementAccount, DepositTypeID, MCID FROM TSYS WHERE DepositDate = @p0", date)
+                .ToListAsync();
         }
     }
 }

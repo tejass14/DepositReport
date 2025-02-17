@@ -1,5 +1,8 @@
-﻿using DepositReport.Core.Services.Contracts;
-using DepositReport.Infrastructure.Data.Repositories.Contracts;
+﻿#region usings
+using DepositReport.Core.DTOs;
+using DepositReport.Core.Services.Contracts;
+using DepositReport.Infrastructure.Data.Repositories.Contracts; 
+#endregion
 
 namespace DepositReport.Core.Services
 {
@@ -34,6 +37,50 @@ namespace DepositReport.Core.Services
 
                _depositsRepository.GetAchTransactions(settId, session);
             }
+        }
+
+        public void ProcessDepositsAsync(DepositRequest request)
+        {
+            var nextDate = GetNextWorkDate(request.Date);
+
+            var tsysDeposits = _depositsRepository.GetTsysDepositsAsync(request.Date);
+
+            //  var ebopDeposits = _depositsRepository.GetEBOPDepositsAsync(request.Date, nextDate);
+
+            //   var combinedDeposits = tsysDeposits.Concat(ebopDeposits).ToList();
+            /*
+               foreach (var deposit in combinedDeposits)
+               {
+                   deposit.DepositTypeID = DetermineDepositType(deposit.DepositDescription);
+               }*/
+        }
+
+
+        private DateTime GetNextWorkDate(DateTime date)
+        {
+            var nextDate = date.AddDays(1);
+            return nextDate;
+        }
+
+        private string DetermineDepositType(string description)
+        {
+            if (description.Contains("FileID"))
+            {
+                return "File Deposit";
+            }
+            if (description.Contains("DEPOSIT"))
+            {
+                return "Deposit";
+            }
+            if (description.Contains("CHARGEBACK"))
+            {
+                return "Chargeback";
+            }
+            if (description.Contains("ADJUSTMENT"))
+            {
+                return "Adjustment";
+            }
+            return "Unknown";
         }
     }
 }

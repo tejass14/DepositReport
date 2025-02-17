@@ -9,5 +9,6 @@ namespace DepositReport.Infrastructure.Data.Repositories.Contracts
         void GetCcTransactions(string? parentId, string session);
         void GetAchTransactions(string? settId, string session);
         IEnumerable<ReportAchSettledTransactionsTemp> GetDuplicateAchRecords(string transactionReferenceNumber);
+        Task<IEnumerable<Files>> GetTsysDepositsAsync(DateTime date);
     }
 }
